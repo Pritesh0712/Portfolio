@@ -112,7 +112,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     const submitBtn = document.querySelector('.form-submit');
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending...';
     
-    // For demo purposes (replace with actual form submission)
     setTimeout(function() {
         submitBtn.innerHTML = '<i class="fas fa-check me-2"></i> Message Sent!';
         submitBtn.style.backgroundColor = 'green';
@@ -153,7 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.querySelector('.navbar-toggler').click();
                 }
                 
-                // Calculate offset (account for fixed navbar)
                 const navbarHeight = document.querySelector('.navbar').offsetHeight;
                 const targetPosition = targetElement.offsetTop - navbarHeight;
                 
@@ -165,11 +163,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Set initial active state
     setActiveNavLink();
     toggleScrollToTopButton();
     
-    // Handle hash links when page loads (for direct section access)
     if (window.location.hash) {
         const targetElement = document.querySelector(window.location.hash);
         if (targetElement) {
@@ -187,7 +183,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Update active navigation link based on scroll position
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
@@ -196,7 +191,7 @@ function setActiveNavLink() {
     const scrollPosition = window.scrollY;
     
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100; // Adjust for navbar height
+        const sectionTop = section.offsetTop - 100; 
         const sectionHeight = section.offsetHeight;
         
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
@@ -212,14 +207,12 @@ function setActiveNavLink() {
     });
 }
 
-// Animate skills when in viewport
 document.addEventListener('scroll', function() {
     const skillsSection = document.querySelector('#skills');
     if (skillsSection && isInViewport(skillsSection)) {
         animateSkills();
     }
     
-    // Call updated functions for nav and scroll button
     setActiveNavLink();
     toggleScrollToTopButton();
 });
