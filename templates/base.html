@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rathod Pritesh | Python & Java Developer</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="{{ url_for('static', filename='css/bootstrap.min.css')}}"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="{{ url_for('static', filename='css/all.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css')}}"
+    />
+    <!-- AOS Animation Library -->
+    <link
+      href="{{ url_for('static', filename='css/aos.css')}}"
+      rel="stylesheet"
+    />
+    <!-- Typed.js for text animation -->
+    <script src="{{url_for('static', filename='Js/typed.min.js')}}"></script>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader-content">
+        <div class="loader"></div>
+        <h3>Loading Portfolio...</h3>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#hero">Rathod Pritesh</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="{{url_for('home')}}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('about')}}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('projects')}}">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('skills')}}">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('certificates')}}"
+                >Certificates</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section id="hero">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7 hero-content">
+              <h1 class="hero-title" data-aos="fade-up">Rathod Pritesh</h1>
+              <h2 class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                <span id="typed-text"></span>
+              </h2>
+              <p
+                class="hero-description"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                MSc (CA & IT) graduate passionate about creating intuitive and
+                efficient software solutions.
+              </p>
+              <div
+                class="d-flex flex-wrap gap-3 mt-3"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <a href="{{ url_for('download_resume') }}" class="btn btn-primary hero-btn me-3">
+                  <i class="fas fa-download me-2"></i> Download Resume
+                </a>
+                <a
+                  href="{{ url_for('contact') }}"
+                  class="btn btn-outline-primary hero-btn"
+                >
+                  <i class="fas fa-envelope me-2"></i> Contact Me
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-5 hero-img text-center" data-aos="fade-left">
+              <img
+                src="{{ url_for('static', filename='images/Portfolio_img.png') }}"
+                alt="Rathod Pritesh"
+                class="img-fluid profile-img"
+                width="350"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about">
+        <div class="container">
+          <div class="section-title" data-aos="fade-up">
+            <h2>About Me</h2>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div
+                class="about-content glass-effect"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <p>
+                  I am an
+                  <span class="text-primary fw-bold"
+                    >MSc (CA & IT) graduate</span
+                  >
+                  from K.S. School of Business Management & Information
+                  Technology with a strong passion for software development and
+                  web technologies.
+                </p>
+                <p>
+                  My academic journey has equipped me with a solid foundation in
+                  computer applications and information technology, while my
+                  personal projects have helped me develop practical skills in
+                  <span class="fw-bold"
+                    >Python, Java, SQL, and web development</span
+                  >.
+                </p>
+                <p>
+                  I'm particularly interested in
+                  <span class="text-primary fw-bold"
+                    >building efficient backend systems</span
+                  >
+                  and creating intuitive user interfaces. My goal is to leverage
+                  my technical skills to develop solutions that solve real-world
+                  problems.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <div class="container">
+          <div class="section-title" data-aos="fade-up">
+            <h2>Projects</h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="project-card">
+                <div class="project-img">
+                  <img
+                    src="{{ url_for('static', filename='images/BuildTrack.jpg')}}"
+                    alt="Buildtrack - Construction Management System"
+                  />
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">
+                    Buildtrack - Construction Management System
+                  </h3>
+                  <p class="project-description">
+                    A comprehensive web-based solution for construction
+                    companies to manage projects, resources, workers, and
+                    finances in one centralized platform.
+                  </p>
+                  <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">HTML/CSS</span>
+                    <span class="tech-badge">JS</span>
+                    <span class="tech-badge">Bootstrap</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="https://github.com/Pritesh0712/BuildTrack"
+                      ><i class="fab fa-github me-1"></i> GitHub</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="project-card">
+                <div class="project-img">
+                  <img
+                    src="{{ url_for('static', filename='images/Portfolio.jpg')}}"
+                    alt="Personal Portfolio Website"
+                  />
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">Personal Portfolio Website</h3>
+                  <p class="project-description">
+                    A responsive portfolio website featuring my projects,
+                    skills, and professional information. Designed with modern
+                    UI/UX principles and animations.
+                  </p>
+                  <div class="tech-stack">
+                    <span class="tech-badge">HTML</span>
+                    <span class="tech-badge">CSS</span>
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Bootstrap</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="#"><i class="fab fa-github me-1"></i> GitHub</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills">
+        <div class="container py-5">
+          <div class="section-title text-center mb-4" data-aos="fade-up">
+            <h2>Skills</h2>
+          </div>
+          <div class="row">
+            <!-- Left Column -->
+            <div
+              class="col-12 col-md-6 mb-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="skill-item mb-3">
+                <div class="skill-info d-flex align-items-center">
+                  <img
+                    src="{{url_for('static', filename='images/Python_skill.png')}}"
+                    alt="Python"
+                    class="me-2"
+                    style="width: 30px; height: 30px"
+                  />
+                  <h4 class="mb-0">Python</h4>
+                </div>
+              </div>
+              <div class="skill-item mb-3">
+                <div class="skill-info d-flex align-items-center">
+                  <img
+                    src="{{url_for('static', filename='images/Java_skill.jpg')}}"
+                    alt="Java"
+                    class="me-2"
+                    style="width: 30px; height: 30px"
+                  />
+                  <h4 class="mb-0">Java</h4>
+                </div>
+              </div>
+              <div class="skill-item mb-3">
+                <div class="skill-info d-flex align-items-center">
+                  <img
+                    src="{{url_for('static', filename='images/Sql.jpg')}}"
+                    alt="SQL"
+                    class="me-2"
+                    style="width: 30px; height: 30px"
+                  />
+                  <h4 class="mb-0">SQL</h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div
+              class="col-12 col-md-6 mb-4"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="skill-item mb-3">
+                <div class="skill-info d-flex align-items-center">
+                  <img
+                    src="{{url_for('static', filename='images/Go.png')}}"
+                    alt="Go"
+                    class="me-2"
+                    style="width: 30px; height: 30px"
+                  />
+                  <h4 class="mb-0">Go</h4>
+                </div>
+              </div>
+              <div class="skill-item mb-3">
+                <div class="skill-info d-flex align-items-center">
+                  <img
+                    src="{{url_for('static', filename='images/Flask.png')}}"
+                    alt="Flask"
+                    class="me-2"
+                    style="width: 30px; height: 30px"
+                  />
+                  <h4 class="mb-0">Flask</h4>
+                </div>
+              </div>
+              <div class="skill-item mb-3">
+                <div class="skill-info d-flex align-items-center">
+                  <img
+                    src="{{url_for('static', filename='images/Git.png')}}"
+                    alt="Git"
+                    class="me-2"
+                    style="width: 30px; height: 30px"
+                  />
+                  <h4 class="mb-0">Git</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certificates Section -->
+      <section id="certificates">
+        <div class="container">
+          <div class="section-title" data-aos="fade-up">
+            <h2>Certificates</h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="certificate-card">
+                <div class="certificate-inner">
+                  <div class="certificate-front">
+                    <img
+                      src="{{url_for('static', filename='images/python.jpeg')}}"
+                      alt="Python Certificate"
+                    />
+                  </div>
+                  <div class="certificate-back">
+                    <h3 class="certificate-title">Python Programming</h3>
+                    <p class="certificate-issuer">Udemy</p>
+                    <p>
+                      Comprehensive Python programming course covering
+                      fundamentals, advanced concepts, web development with
+                      Flask, and data analysis.
+                    </p>
+                    <p>Completed: July 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="certificate-card">
+                <div class="certificate-inner">
+                  <div class="certificate-front">
+                    <img
+                      src="{{url_for('static', filename='images/java.png')}}"
+                      alt="Java Certificate"
+                    />
+                  </div>
+                  <div class="certificate-back">
+                    <h3 class="certificate-title">Java Development</h3>
+                    <p class="certificate-issuer">Udemy</p>
+                    <p>
+                      Java programming course covering core concepts,
+                      object-oriented programming, data structures, algorithms,
+                      and application development.
+                    </p>
+                    <p>Completed: July 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <div class="container">
+          <div class="section-title" data-aos="fade-up">
+            <h2>Contact Me</h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+              <div class="contact-info">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Email</h4>
+                    <p>rathodpritesh0712@gmail.com</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>LinkedIn</h4>
+                    <p>www.linkedin.com/in/rathodpritesh</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>GitHub</h4>
+                    <p>https://github.com/Pritesh0712</p>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Location</h4>
+                    <p>Ahmedabad, India</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+              <div class="contact-form">
+                <form
+                  id="contactForm"
+                  action="{{url_for('submit_contact')}}"
+                  method="POST"
+                >
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="name"
+                        placeholder="Your Name"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <input
+                        type="email"
+                        class="form-control"
+                        name="email"
+                        placeholder="Your Email"
+                        required
+                      />
+                    </div>
+                    <div class="col-12">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="subject"
+                        placeholder="Subject"
+                        required
+                      />
+                    </div>
+                    <div class="col-12">
+                      <textarea
+                        class="form-control"
+                        name="message"
+                        placeholder="Your Message"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="col-12">
+                      <button type="submit" class="form-submit">
+                        <i class="fas fa-paper-plane me-2"></i> Send Message
+                      </button>
+                    </div>
+
+                    {% with messages =
+                    get_flashed_messages(with_categories=true) %} {% if messages
+                    %}
+                    <div
+                      id="flash-message"
+                      class="alert alert-{{ messages[0][0] }} mt-3"
+                      role="alert"
+                    >
+                      {{ messages[0][1] }}
+                    </div>
+                    {% endif %} {% endwith %}
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="social-links">
+          <a href="https://github.com/Pritesh0712"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/rathodpritesh/"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="mailto:rathodpritesh0712@gmail.com"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+        <div class="footer-nav">
+          <a href="{{url_for('home')}}">Home</a>
+          <a href="{{url_for('about')}}">About</a>
+          <a href="{{url_for('projects')}}">Projects</a>
+          <a href="{{url_for('skills')}}">Skills</a>
+          <a href="{{url_for('certificates')}}">Certificates</a>
+          <a href="{{url_for('contact')}}">Contact</a>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 Rathod Pritesh. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="{{url_for('static', filename='Js/bootstrap.bundle.min.js')}}"></script>
+    <!-- AOS Animation Library -->
+    <script src="{{ url_for('static', filename='Js/aos.js')}}"></script>
+    <!-- particles.js -->
+    <script src="{{url_for('static', filename='Js/particles.min.js')}}"></script>
+    <script src="{{url_for('static', filename='Js/script.js')}}"></script>
+  </body>
+  <script>
+    setTimeout(fucntion(){
+        var flash = document.getElementById("flash-message")
+        if(flash){
+            flash.style.display= "none";
+        }
+    })
+  </script>
+</html>
